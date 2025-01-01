@@ -1,6 +1,9 @@
 {
   "name": "ts-cli",
-  "version": "0.0.1",
+  "bin": {
+    "practice": "index.js"
+  },
+  "version": "0.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,5 +11,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "markbonchi",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
 }
