@@ -1,18 +1,20 @@
 {
   "name": "ts-cli",
   "bin": {
-    "practice": "index.js"
+    "practice": "dist/index.js"
   },
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "transpile": "tsc -w",
+    "link-cli": "npm unlink --global && npm link"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "markbonchi",
+  "description": "mark bonchi",
   "devDependencies": {
+    "@types/node": "^22.10.4",
     "typescript": "^5.7.2"
   }
 }
