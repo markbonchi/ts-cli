@@ -1,5 +1,11 @@
 #!/usr/bin/env node
+import fs from "fs"
+import { Command } from "commander"
 
-const hello = () => { }
+const program = new Command()
 
-console.log("working!!!")
+program
+    .action(() => { console.log("Hello!") })
+
+
+program.parse(process.argv)
