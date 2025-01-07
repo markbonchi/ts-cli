@@ -7,17 +7,18 @@
   "main": "index.js",
   "scripts": {
     "transpile": "tsc -w",
-    "link-cli": "npm unlink --global && npm link"
+    "link-cli": "(npm unlink --global || true ) && npm link"
   },
   "keywords": [],
-  "author": "",
+  "author": "mark bonchi",
   "license": "ISC",
-  "description": "mark bonchi",
+  "description": "",
   "devDependencies": {
     "@types/node": "^22.10.4",
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "commander": "^13.0.0"
+    "commander": "^13.0.0",
+    "inquirer": "^12.3.0"
   }
 }
