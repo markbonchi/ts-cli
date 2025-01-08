@@ -6,18 +6,6 @@ import { Command } from "commander"
 import inquirer from "inquirer"
 
 
-// const program = new Command()
+const main = new cmd()
 
-// inquirer.prompt([])
-
-// program
-//     .argument("<string>", "string to log")
-//     .action((message: string) => { console.log(`Hello ${message}!`) })
-
-
-// program.parse(process.argv)
-
-
-
-
-const main = new cmd().mainloop();
+main.mainloop();
