@@ -1,9 +1,12 @@
 import readline from "readline/promises"
-import { stdin as input, stdout as output, stderr } from "process"
+import { argv, stdin as input, stdout as output, stderr } from "process"
 
 
 export class cmd {
     rl: readline.Interface
+    commands: string[] = []
+
+
     constructor() {
         const rl = readline.createInterface({ input, output });
         this.rl = rl;
@@ -18,17 +21,46 @@ export class cmd {
     };
 
     protected parceCommand = (line: string) => {
-        switch (line) {
+        switch (line.toLowerCase()) {
             case "quit":
                 this.rl.close();
-                console.log("You quit");
                 break;
             case "clear":
-                console.log("clear")
+                this.clear()
+                this.commands = [...this.commands, line]
+                this.mainloop()
+                break
+            case "hi":
+                this.sayHello()
+                this.commands = [...this.commands, line]
+                this.mainloop()
+                break
+            case "history":
+                this.listHistory()
+                this.commands = [...this.commands, line]
+                this.mainloop()
+                break
             default:
                 this.mainloop()
         }
     }
+
+    private sayHello = () => {
+        console.log("Hello")
+    }
+
+    private clear = () => {
+        console.log("clear")
+    }
+
+    private listHistory = () => {
+        console.log("----------")
+        for (let i in this.commands) {
+            console.log(`${i}-----${this.commands[i]}`)
+        }
+        console.log("----------")
+    }
 }
+
 
 export default { cmd }
