@@ -41,12 +41,14 @@ export class cmd {
                 this.mainloop()
                 break
             default:
+                (line) && this.nonCommand(line)
                 this.mainloop()
         }
     }
 
     private sayHello = () => {
         console.log("Hello")
+
     }
 
     private clear = () => {
@@ -59,6 +61,10 @@ export class cmd {
             console.log(`${i}-----${this.commands[i]}`)
         }
         console.log("----------")
+    }
+
+    private nonCommand = (line: string) => {
+        console.log(`${line} is not a command`)
     }
 }
 
